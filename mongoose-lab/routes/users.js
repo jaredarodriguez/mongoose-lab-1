@@ -1,8 +1,9 @@
 var express = require("express");
 var router = express.Router();
-var flightsCtrl = require("../controllers/flights");
-
 /* GET users listing. */
-router.get("/flightList", flightsCtrl.flightList);
+
+router.get("/", function(req, res, next) {
+  res.send("respond with a resource");
+});
 
 module.exports = router;
