@@ -16,7 +16,7 @@ function newFlight(req, res) {
   res.render("flights/new", { title: "Flights" });
 }
 
-//!this takes the output of the form and submits it to the database
+// !this takes the output of the form and submits it to the database
 function create(req, res) {
   const flight = new Flight(req.body);
   flight.save(function(err) {

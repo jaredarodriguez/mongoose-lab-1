@@ -22,12 +22,13 @@ var flightSchema = new Schema({
       redate.setFullYear(redate.getFullYear() + 1);
       return redate;
     }
-  },
+  }, 
 
   desCity: {
-    type: String,
-    require: true
+    type: String, 
+    require: true, 
   }
+  
 });
 
 module.exports = mongoose.model("Flight", flightSchema);
