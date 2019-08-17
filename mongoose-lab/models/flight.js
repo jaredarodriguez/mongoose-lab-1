@@ -1,6 +1,12 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
+var destSchema = new Schema({
+  destination: {
+    type: String,
+    enum: ["AUS", "DAL", "LAX", "SEA"]
+  }
+});
 var flightSchema = new Schema({
   airline: {
     type: String,
