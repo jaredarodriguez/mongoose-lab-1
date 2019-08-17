@@ -5,10 +5,7 @@
       <th>Airline</th>
       <th>Flight<br />Number</th>
       <th>Departs</th>
-      <th>
-        Destination <br />
-        City
-      </th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +14,6 @@
       <td><%= f.airline %></td>
       <td><%= f.flightNo %></td>
       <td><%= f.depart %></td>
-      <td><%= f.depAirport %></td>
       <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
     </tr>
     <% }); %>

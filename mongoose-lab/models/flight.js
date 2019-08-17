@@ -19,6 +19,7 @@ var flightSchema = new Schema({
     min: 10,
     max: 9999
   },
+  destinations: [destSchema],
 
   depart: {
     type: Date,
