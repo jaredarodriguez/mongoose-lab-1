@@ -26,6 +26,9 @@ function create(req, res) {
   });
 }
 
+
+
+
 function detail(req, res) {
     Flight.findById(req.params.id, function(err, flights){ 
   res.render("flights/detail", { title: "Flight Detail", flights })

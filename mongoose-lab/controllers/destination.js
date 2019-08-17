@@ -6,9 +6,9 @@ module.exports = {
 
 function create(req, res) {
   Flight.findById(req.params.id, function(err, flight) {
-    flights.destination.push(req.body);
+    flight.destination.push(req.body);
     flight.save(function(err) {
-      res.redirect(`/flights/detail/${flight.id}`);
+      res.redirect(`/flights/${flight.id}`);
     });
   });
 }

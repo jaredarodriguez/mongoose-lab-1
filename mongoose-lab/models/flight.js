@@ -3,8 +3,7 @@ var Schema = mongoose.Schema;
 
 var destSchema = new Schema({
   destination: {
-    type: String,
-    enum: ["AUS", "DAL", "LAX", "SEA"]
+    type: String
   }
 });
 var flightSchema = new Schema({
@@ -19,7 +18,7 @@ var flightSchema = new Schema({
     min: 10,
     max: 9999
   },
-  destinations: [destSchema],
+  destination: [destSchema],
 
   depart: {
     type: Date,
