@@ -2,10 +2,12 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var destSchema = new Schema({
-  destination: {
-    type: String
+  destAirport: {
+    type: String,
+    unique: true
   }
 });
+
 var flightSchema = new Schema({
   airline: {
     type: String,

@@ -15,7 +15,7 @@
 <form
   id="add-destination-form"
   method="POST"
-  action="/flights/<%= flights._id %>/destination"
+  action="/flights/<%= flights._id%>/destination"
 >
   <label>Destination Airport: </label>
   <select name="destAirport">
@@ -30,6 +30,7 @@
   <input type="submit" value="Add Destination" />
 </form>
 
-<section><%= flights.destination %></section>
-
-<%- include('../partials/footer') %>
+<% if (flights.destination.length) { %> <%
+flights.destination.forEach(function(x) { %>
+<br />
+<%= x.destAirport %> <% })}; %> <%- include('../partials/footer') %>
