@@ -5,6 +5,9 @@ var destSchema = new Schema({
   destAirport: {
     type: String,
     unique: true
+  },
+  arrives: {
+    type: Date
   }
 });
 

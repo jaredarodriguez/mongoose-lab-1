@@ -26,11 +26,20 @@
     <option value="London">London</option>
     <option value="Sydney">Sydney</option>
   </select>
+  <label>
+    Arrival Time:
+    <input type="datetime-local" name="arrives" />
+  </label>
   <!-- <input type="checkbox" name="nowShowing" checked> -->
   <input type="submit" value="Add Destination" />
 </form>
-
-<% if (flights.destination.length) { %> <%
-flights.destination.forEach(function(x) { %>
 <br />
-<%= x.destAirport %> <% })}; %> <%- include('../partials/footer') %>
+<br />
+<div>
+  <h2>Arrival Info</h2>
+  <% if (flights.destination.length) { %> <%
+  flights.destination.forEach(function(x) { %>
+  <br />
+  <%= x.destAirport %> <%= x.arrives %>
+</div>
+<% })}; %> <%- include('../partials/footer') %>
