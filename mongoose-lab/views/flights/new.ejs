@@ -1,33 +1,44 @@
 <%- include('../partials/header') %>
-<form id="new-form" action="/flights/new" method="POST">
-  <label>Airline: </label>
-  <select name="airline">
-    <option value="United">United</option>
-    <option value="Southwest">Southwest</option>
-    <option value="Delta">Delta</option>
-    <option value="Alaska">Alaska</option>
-    <option value="Virgin">Virgin</option>
-    <option value="Quantas">Quantas</option>
+
+
+<form id='new-form' action="/flights/new" method="POST">
+
+	<label>Airline:
+	  <select name="airline">
+	    <option value="United">United</option>
+	    <option value="Southwest">Southwest</option>
+	    <option value="Delta">Delta</option>
+		</select>
+	</label><br>
+	<br>
+
+	<label>Flight Number:
+	  <input type="text" name="flightNo">
+	</label>
+	<br>
+	<br>
+
+
+
+	<label>Departure date:</label>
+	  <input type="datetime-local" name="departs">
+	
+	<br>
+	<br>
+	<label> Departure airport:
+<select name="depAirport">
+	</label>
+    <option value="AUN">AUN</option>
+    <option value="DAL">DAL</option>
+    <option value="LAX">LAX</option>
+    <option value="SEA">SEA</option>
   </select>
-  <br /><br />
-  <label>Flight Number: </label>
-  <input type="text" name="flightNo" />
-  <label>Departs: </label>
-  <input type="datetime-local" name="departs" />
-  <!-- <label>Cast (separate actors with commas):</label>
- <input type="text" name="cast"> -->
-  <br />
-  <br />
-  <label>Departure Airport: </label>
-  <select name="depAirport">
-    <option value="Paris">Paris</option>
-    <option value="Los Angeles">Los Angeles</option>
-    <option value="Anchorage">Anchorage</option>
-    <option value="Cuba">Cuba</option>
-    <option value="London">London</option>
-    <option value="Sydney">Sydney</option>
-  </select>
-  <!-- <input type="checkbox" name="nowShowing" checked> -->
-  <input type="submit" value="Add Flight" />
+  <br>
+  <br>
+	
+	<input type='submit' value='Add Flight'>
+    
 </form>
+
+
 <%- include('../partials/footer') %>

@@ -1,34 +1,39 @@
-const Flight = require("../models/flight");
+var Flight = require("../models/flight");
 var Ticket = require("../models/ticket");
 
 module.exports = {
-  index,
   new: newFlight,
   create,
+  index,
   detail
 };
 
-function index(req, res) {
-  Flight.find({}, function(err, flights) {
-    res.render("flights/index", { title: "Flights", flights });
+function detail(req, res) {
+  Flight.findById(req.params.id, function(err, flights) {
+    Ticket.find({ flight: flights._id }, function(err, tickets) {
+      res.render("flights/detail", {
+        title: "Flight Detail",
+        flights,
+        tickets
+      });
+    });
   });
 }
 
 function newFlight(req, res) {
-  res.render("flights/new", { title: "Flights" });
+  res.render("flights/new", { title: "Add Flight" });
 }
 
-// !this takes the output of the form and submits it to the database
 function create(req, res) {
-  const flight = new Flight(req.body);
+  var flight = new Flight(req.body);
   flight.save(function(err) {
-    if (err) return res.redirect("/flights/new");
+    if (err) return res.redirect("/flights/new", { title: "Add Flight" });
     res.redirect("/flights");
   });
 }
 
-function detail(req, res) {
-  Flight.findById(req.params.id, function(err, flights) {
-    res.render("flights/detail", { title: "Flight Detail", flights });
+function index(req, res) {
+  Flight.find({}, function(err, flights) {
+    res.render("flights/index", { title: "All Flights", flights });
   });
 }
