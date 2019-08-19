@@ -25,6 +25,11 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
+  if (!req.body.departs) {
+    var redate = new Date();
+    redate.setFullYear(redate.getFullYear() + 1);
+    req.body.departs = redate;
+  }
   var flight = new Flight(req.body);
   flight.save(function(err) {
     if (err) return res.redirect("/flights/new", { title: "Add Flight" });
